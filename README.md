@@ -12,6 +12,7 @@
   <img src="https://img.shields.io/badge/Flask-Python-000000?style=for-the-badge&logo=flask&logoColor=white" />
   <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
   <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
+  <img src="https://img.shields.io/badge/Groq-LLaMA_3.3-F55036?style=for-the-badge&logo=meta&logoColor=white" />
 </p>
 
 <p>
@@ -112,9 +113,9 @@ All user profiles, quiz history, and performance data stored securely on **Cloud
 └───────────────────────┼──────────────┼──────────────────────────┘
                         │              │
               ┌─────────▼──┐    ┌──────▼──────┐
-              │  Gemini    │    │  Flask API  │
-              │  API       │    │  (Python)   │
-              │            │    │             │
+              │  Groq API  │    │  Flask API  │
+              │  (LLaMA    │    │  (Python)   │
+              │   3.3 70B) │    │             │
               │ Quiz Gen & │    │ ML Model    │
               │ Evaluation │    │ Prediction  │
               └─────────┬──┘    └──────┬──────┘
@@ -190,8 +191,8 @@ All user profiles, quiz history, and performance data stored securely on **Cloud
 <br/><sub>ML Model</sub>
 </td>
 <td align="center" width="140">
-<img src="https://cdn.simpleicons.org/google/4285F4" width="48" height="48" alt="Gemini" />
-<br/><b>Gemini API</b>
+<img src="https://cdn.simpleicons.org/meta/0467DF" width="48" height="48" alt="LLaMA" />
+<br/><b>Groq + LLaMA</b>
 <br/><sub>Gen AI</sub>
 </td>
 <td align="center" width="140">
@@ -264,8 +265,8 @@ npm install
 Create a `.env` file in the project root:
 
 ```env
-# 🤖 AI API Key
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
+# 🤖 AI API Key (https://console.groq.com)
+VITE_GROQ_API_KEY=your_groq_api_key_here
 
 # 🔥 Firebase Configuration
 VITE_FIREBASE_API_KEY=your_api_key
@@ -286,6 +287,7 @@ npm run dev
 
 ```bash
 pip install -r ml/requirements.txt
+npm run ml:train          # Generate model.pkl (first time only)
 python ml/app.py
 ```
 
